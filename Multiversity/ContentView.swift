@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    private var chars: [Character] = "Multiversity".uppercased().map({$0})
     var body: some View {
         ZStack {
-            Color.black
+            LinearGradient(colors: [AppColor.yellow, Color.black], startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             VStack {
-                Image("cosmos")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .cornerRadius(5)
-                Text("Multiversity")
-                    .foregroundColor(.white)
-                    .font(Font.largeTitle)
+                HStack {
+                    Text("Multiversity".uppercased())
+                        .font(Font.largeTitle)
+                        .fontWeight(.bold)
+                }
             }
             .padding()
         }
